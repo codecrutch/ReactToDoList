@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TodoListItem = ({todo, removeTodo, updateTodo}) => {
+const TodoListItem = ({handMeDowns: {todo, removeTodo, updateTodo}}) => {
   let status = todo.done ? 'undone' : 'done';
   const toggleTodo = (todo) => {
     todo.done = !todo.done;

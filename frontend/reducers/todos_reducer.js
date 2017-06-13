@@ -1,19 +1,6 @@
 import { RECEIVE_TODOS, RECEIVE_TODO, REMOVE_TODO, UPDATE_TODO} from '../actions/todo_actions';
 import merge from 'lodash/merge';
-const initialState = {
-  1: {
-    id: 1,
-    title: "Learn React",
-    body: "with redux",
-    done: false
-  },
-  2: {
-    id: 2,
-    title: "wash React",
-    body: "with with width redux",
-    done: true
-  },
-};
+const initialState = {};
 
 
 const todoReducer = function(state = initialState, action) {
@@ -33,7 +20,7 @@ const todoReducer = function(state = initialState, action) {
       delete newState[action.todo.id];
       return newState;
     case UPDATE_TODO:
-    
+
       newState = merge({}, state);
       newState[action.todo.id] = action.todo;
       return newState;
