@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { receiveTodo } from '../../actions/todo_actions';
+import { receiveTodo, removeTodo, updateTodo} from '../../actions/todo_actions';
 import TodoList from './todo_list';
 import { allTodos } from '../../reducers/selectors';
 
@@ -12,7 +12,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-    receiveTodo: (todo) => dispatch(receiveTodo(todo))
+    receiveTodo: (todo) => dispatch(receiveTodo(todo)),
+    removeTodo: (todo) => dispatch(removeTodo(todo)),
+    updateTodo: (todo) => dispatch(updateTodo(todo))
   });
 };
 
